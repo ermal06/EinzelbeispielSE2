@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Einzelbeispiel SE2</string>
+    <string name="Test">Button</string>
+    <string name="insert_word">Insert word</string>
+</resources>
