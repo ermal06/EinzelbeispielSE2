@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
         insertWord= (EditText) findViewById(R.id.editText2);
 
 
-
         checkP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -32,13 +31,15 @@ public class MainActivity extends AppCompatActivity {
 
                 if (isEmpty(str)) {
                     Toast.makeText(MainActivity.this, "Write Something first", Toast.LENGTH_LONG).show();
-
                 } else {
-
-                    if (!isPalindrome(str.trim())) {
-                        Toast.makeText(MainActivity.this, "Is Not palindrome", Toast.LENGTH_LONG).show();
-                    } else {
-                        Toast.makeText(MainActivity.this, "Is Palindrome", Toast.LENGTH_LONG).show();
+                     if(str.trim().length()< 5){
+                        Toast.makeText(MainActivity.this, "The minimal word length is 5", Toast.LENGTH_LONG).show();
+                     }else {
+                        if (!isPalindrome(str.trim())) {
+                            Toast.makeText(MainActivity.this, "Is Not palindrome", Toast.LENGTH_LONG).show();
+                        } else {
+                            Toast.makeText(MainActivity.this, "Is Palindrome", Toast.LENGTH_LONG).show();
+                        }
                     }
                 }
             }
