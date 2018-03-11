@@ -27,15 +27,17 @@ public class MainActivity extends AppCompatActivity {
         checkP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String str = insertWord.getText().toString();
+                String str = insertWord.getText().toString().trim();
 
                 if (isEmpty(str)) {
                     Toast.makeText(MainActivity.this, "Write Something first", Toast.LENGTH_LONG).show();
                 } else {
-                     if(str.trim().length()< 5){
+                     if(str.length()< 5){
                         Toast.makeText(MainActivity.this, "The minimal word length is 5", Toast.LENGTH_LONG).show();
+
                      }else {
-                        if (!isPalindrome(str.trim())) {
+
+                        if (!isPalindrome(str)) {
                             Toast.makeText(MainActivity.this, "Is Not palindrome", Toast.LENGTH_LONG).show();
                         } else {
                             Toast.makeText(MainActivity.this, "Is Palindrome", Toast.LENGTH_LONG).show();
@@ -52,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean isEmpty(String etText) {
-        if (etText.trim().length() > 0)
+        if (etText.length() > 0)
             return false;
 
         return true;
